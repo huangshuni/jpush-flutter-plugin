@@ -1,6 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    >
+    package="com.jiguang.jpush">
     <application>
 <!--        <receiver-->
 <!--            android:name="com.jiguang.jpush.JPushPlugin$JPushReceiver"-->
@@ -31,32 +30,11 @@
             android:enabled="true"
             android:exported="false"
             android:stopWithTask="true"
-            >
+            android:process=":pushcore">
             <intent-filter>
                 <action android:name="cn.jiguang.user.service.action" />
             </intent-filter>
         </service>
-        <!--Required_config-->
-        <service
-            android:name="cn.jpush.android.service.PushService"
-            android:enabled="true"
-            android:exported="false"
-            tools:node="replace"
-            >
-            <intent-filter>
-                <action android:name="cn.jpush.android.intent.REGISTER" />
-                <action android:name="cn.jpush.android.intent.REPORT" />
-                <action android:name="cn.jpush.android.intent.PushService" />
-                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
-            </intent-filter>
-        </service>
-
-        <provider
-            tools:node="replace"
-            android:name="cn.jpush.android.service.DataProvider"
-            android:authorities="${applicationId}.DataProvider"
-            android:exported="false"
-            />
     </application>
     <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE"/>
 </manifest>
