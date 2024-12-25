@@ -201,7 +201,7 @@ public class JPushHelper {
         notification.put("cmd", cmdMessage.cmd);
         notification.put("errorCode", cmdMessage.errorCode);
         notification.put("msg", cmdMessage.msg);
-//        notification.put("extras", getExtras(cmdMessage));
+        notification.put("extras", bundleToMap(cmdMessage.extra));
         channel.invokeMethod("onCommandResult", notification);
     }
 
@@ -271,7 +271,6 @@ public class JPushHelper {
         }
         return extra;
     }
-
     private Map<String, Object> getExtras(NotificationMessage notificationMessage) {
         Map<String, Object> extras = new HashMap<>();
         try {
@@ -303,7 +302,16 @@ public class JPushHelper {
         }
         return extras;
     }
-
+    public static Map<String, Object> bundleToMap(Bundle bundle) {
+        Map<String, Object> map = new HashMap<>();
+        if (bundle != null) {
+            for (String key : bundle.keySet()) {
+                Object value = bundle.get(key);
+                map.put(key, value);
+            }
+        }
+        return map;
+    }
     public Map<String, Object> stringToMap(String extra) {
         Map<String, Object> useExtra = new HashMap<String, Object>();
         try {

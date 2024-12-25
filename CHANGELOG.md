@@ -1,9 +1,11 @@
+## 3.1.5
+修复onCommandResult 方法中没有 extra 参数问题，都放到map中
 ## 3.1.4
 删除多余配置
 ## 3.1.3
 修复后台不能获取回调的问题
 ## 3.1.2
-修复在map中且套map不能获取数据问题
+修复在map中且套map不能获取数据问题: 主要由原来的string 类型 修改为 map 类型。
 ## 3.1.1
 开放Android setThirdToken 接口
 ## 3.1.0
