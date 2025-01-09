@@ -35,5 +35,8 @@ android {
 }
 
 dependencies {
-    implementation 'cn.jiguang.sdk:jpush:5.5.0'
+    implementation ('cn.jiguang.sdk:jpush:5.5.3'){
+        exclude group: 'cn.jiguang.sdk', module: 'jcore'//会自动把jcore剔除
+    }
+    implementation 'cn.jiguang.sdk:jcore-custom:4.8.9'
 }

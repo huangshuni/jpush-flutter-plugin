@@ -1,3 +1,5 @@
+## 3.1.8
+更新android JPush 553+ jcore 489
 ## 3.1.7
 修复iOS杀死app点击通知不走回调的问题
 ## 3.1.6
@@ -10,7 +12,7 @@
 修复后台不能获取回调的问题
 ## 3.1.2
 修复在map中且套map不能获取数据问题: 主要由原来的string 类型 修改为 map 类型。
-## 3.1.1
+## 3.1.1[google版SDK(1).log](..%2F..%2Flogs%2Fgoogle%E7%89%88SDK%281%29.log)
 开放Android setThirdToken 接口
 ## 3.1.0
 开放Android setHBInterval 接口
